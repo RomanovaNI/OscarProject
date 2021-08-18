@@ -7,11 +7,10 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends PageBase {
 
 
-
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
+
     @FindBy(css = ".dropdown-submenu")
     WebElement submenuBooks;
 
@@ -24,7 +23,7 @@ public class HomePage extends PageBase {
     @FindBy(id = "login_link")
     WebElement loginTab;
 
-    public RegisterPage clickLogin() {
+    public RegisterPage clickLoginOrRegister() {
         loginTab.click();
         return new RegisterPage(driver);
     }
@@ -32,10 +31,15 @@ public class HomePage extends PageBase {
     @FindBy(id = "logout_link")
     WebElement logOutTab;
 
-    public boolean isLogoutTabPresent(){
+    public boolean isLogoutTabPresent() {
         return logOutTab.isDisplayed();
-
     }
 
+    @FindBy(css = ".icon-user")
+    WebElement accountTab;
 
+    public AccountPage clickAccount() {
+        accountTab.click();
+        return new AccountPage(driver);
+    }
 }

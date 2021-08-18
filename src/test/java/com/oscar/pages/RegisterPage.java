@@ -46,4 +46,28 @@ public class RegisterPage extends PageBase {
     public boolean isErrorMsgPresent() {
         return errorMsg.isDisplayed();
     }
+
+    @FindBy(id = "id_login-username")
+    WebElement loginEmailField;
+
+    @FindBy(id = "id_login-password")
+    WebElement loginPswdField;
+
+    @FindBy(name = "login_submit")
+    WebElement loginBtn;
+
+    public HomePage fillLoginForm(String email, String password) {
+        type(loginEmailField, email);
+        type(loginPswdField, password);
+        loginBtn.click();
+
+        return new HomePage(driver);
+    }
+
+    @FindBy(id = "login_form")
+    WebElement loginForm;
+
+    public boolean isLoginFormPresent() {
+        return loginForm.isDisplayed();
+    }
 }
