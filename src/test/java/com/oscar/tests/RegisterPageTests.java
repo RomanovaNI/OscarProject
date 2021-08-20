@@ -20,7 +20,7 @@ public class RegisterPageTests extends TestBase{
 
     }
 
-    @Test
+    @Test(priority = 2)
     public void registrationPositiveTest(){
         String pswd="Lo123456%";
         homePage.clickLoginOrRegister().fillRegisterForm("lo"+System.currentTimeMillis()+"@lo.lo", pswd);
@@ -31,7 +31,7 @@ public class RegisterPageTests extends TestBase{
 
     }
 
-    @Test
+    @Test(priority = 1)
     public void registrationNegativeEmailTest(){
         homePage.clickLoginOrRegister().fillRegisterForm("@lo.lo", "Lo123456%");
         Assert.assertTrue(registerPage.isLoginTabPresent());
@@ -49,7 +49,7 @@ public class RegisterPageTests extends TestBase{
         Assert.assertTrue(registerPage.isLoginTabPresent());
 
     }
-    @Test(dataProviderClass= DataProviders.class, dataProvider = "registerNegativePswdUsingFile")
+    @Test(dataProviderClass= DataProviders.class, dataProvider = "registerNegativePswdUsingFile", priority = 3)
     public void registrationNegativePasswordDataProviderTest(String pswd){
         //homePage.clickLoginOrRegister().fillRegisterForm("lo@lo.lo", pswd);
         new HomePage(driver).clickLoginOrRegister().fillRegisterForm("lo@lo.lo", pswd);

@@ -42,4 +42,13 @@ public class HomePage extends PageBase {
         accountTab.click();
         return new AccountPage(driver);
     }
+
+    @FindBy(xpath = "//li[@class='dropdown-submenu']")
+    WebElement booksSubMenuTab;
+
+
+    public BooksPage chooseBooksMenu() {
+        booksSubMenuTab.click();
+        return new BooksPage(driver);
+    }
 }
