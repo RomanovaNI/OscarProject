@@ -33,4 +33,30 @@ public class AccountPageTests extends TestBase{
 
         Assert.assertTrue(new CheckoutPage(driver).isErrorMsgIndexPresent());
     }
+
+    @Test
+    public void changePswdPositiveTest(){
+        String oldPswd="Lola1234$";
+        String newPswd="LoLo1234%";
+        new HomePage(driver).clickAccount().clickChangePswd().fillChangePswdForm(oldPswd,newPswd);//.clickEmailHistory();
+
+        //Assert.assertTrue(new AccountPage(driver).isPswdChangedSubjectPresent());
+        Assert.assertTrue(new AccountPage(driver).isPswdUpdatedPresent());
+    }
+
+    @Test
+    public void changePswdNegativeTest(){
+        String oldPswd="Lola1234$";
+        String newPswd="12345";
+        new HomePage(driver).clickAccount().clickChangePswd().fillChangePswdForm(oldPswd,newPswd);
+        Assert.assertTrue(new AccountPage(driver).isErrorMsgPresent());
+
+    }
+
+    @Test
+    public void editProfileInfoTest(){
+        new HomePage(driver).clickAccount().clickEditProfile().filleditProfileForm("Lola");
+        Assert.assertTrue(new AccountPage(driver).isProfileUpdatedPresent());
+    }
+
 }

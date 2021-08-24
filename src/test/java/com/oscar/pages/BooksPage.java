@@ -12,7 +12,7 @@ public class BooksPage extends PageBase {
     @FindBy(xpath = "//form[@action='/en-gb/basket/add/209/']")
     WebElement addFirstBookToBasketTab;
 
-    @FindBy(xpath = "///div[@class='alertinner '][contains(.,' has been added to your basket.')]")
+    @FindBy(xpath = "//div[@class='alertinner '][contains(.,' has been added to your basket.')]")
     WebElement confirmMsgItemIsInBasket;
 
     

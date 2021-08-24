@@ -1,0 +1,5 @@
+16:16:28.125 [main] INFO  com.oscar.tests.TestBase - Start test: changePswdPositiveTest
+16:16:49.076 [main] ERROR com.oscar.tests.TestBase - Test result: Failed
+ru.yandex.qatools.ashot.Screenshot@74971ed9
+16:16:49.077 [main] INFO  com.oscar.tests.TestBase - Stop test: null
+16:16:49.077 [main] INFO  com.oscar.tests.TestBase - ***************
