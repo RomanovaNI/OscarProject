@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AccountPageTest extends TestBase{
+public class AccountPageTests extends TestBase{
     @BeforeMethod
     public void ensurePreconditions() {
         new HomePage(driver).clickLoginOrRegister().fillLoginForm("lola@ll.ua", "Lola1234$");

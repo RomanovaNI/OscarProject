@@ -1,5 +1,6 @@
 package com.oscar.tests;
 
+import com.oscar.pages.PageBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
@@ -34,16 +35,17 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @AfterMethod(enabled = false)
+    @AfterMethod(enabled = true)
     public void tearDown(ITestResult result) {
-        driver.quit();
+
         if (result.isSuccess()) {
             logger.info("Test result: PASSED");
         } else {
-            logger.error("Test result: Failed");
+            logger.error("Test result: Failed"+"\n"+ new PageBase(driver).takeScreenshotWithScrollDown());
         }
         logger.info("Stop test: " + result.getTestName());
         logger.info("***************");
+        driver.quit();
     }
 
 }
