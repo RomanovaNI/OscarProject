@@ -1,10 +1,7 @@
 package com.oscar.pages;
 
 import com.google.common.io.Files;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import ru.yandex.qatools.ashot.AShot;
@@ -56,7 +53,8 @@ public class PageBase {
 
     public Screenshot takeScreenshotWithScrollDown() {
 
-        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
+        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies
+                .viewportPasting(ShootingStrategies.scaling(2.0f),1000))
                 .takeScreenshot(driver);
         try {
             ImageIO.write(screenshot.getImage(), "PNG",
@@ -66,5 +64,14 @@ public class PageBase {
         }
         return screenshot;
     }
+
+    public void clickWithAction(WebElement element, int x, int y) {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(" + x + "," + y + ")");
+        element.click();
+
+    }
+
 
 }

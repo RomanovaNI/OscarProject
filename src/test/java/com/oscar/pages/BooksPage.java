@@ -15,9 +15,28 @@ public class BooksPage extends PageBase {
     @FindBy(xpath = "//div[@class='alertinner '][contains(.,' has been added to your basket.')]")
     WebElement confirmMsgItemIsInBasket;
 
-    
+
     @FindBy(xpath = "//a[contains(.,'Checkout now')]")
     WebElement checkoutTab;
+
+    @FindBy(xpath = "//a[contains(.,'Essential programming')]")
+    WebElement essentialProgrammingTab;
+
+    @FindBy(css = "[title='Agile Retrospective']")
+    WebElement unavailableBook;
+
+    @FindBy(css = "[title='Hackers']")
+    WebElement hackersBook;
+
+    @FindBy(xpath = "//button[@type='submit'][contains(.,'Notify')]")
+    WebElement notifyMeTab;
+
+
+    @FindBy(xpath = "//a[contains(.,'next')]")
+    WebElement btnNext;
+
+    @FindBy(xpath = "//button[contains(.,'Add to wish list')]")
+    WebElement addToWishListTab;
 
     public BooksPage addItemToBasket() {
         addFirstBookToBasketTab.click();
@@ -30,7 +49,37 @@ public class BooksPage extends PageBase {
 
     public CheckoutPage clickCheckout() {
         checkoutTab.click();
-        return  new CheckoutPage(driver);
+        return new CheckoutPage(driver);
+    }
+
+    public BooksPage chooseEssenProgrammingSection() {
+        essentialProgrammingTab.click();
+        return this;
+    }
+
+    public BooksPage chooseUnavailbleBook() {
+        unavailableBook.click();
+        return this;
+    }
+
+    public BooksPage clickNotifyMe() {
+        notifyMeTab.click();
+        return this;
+    }
+
+    public BooksPage clickNextBtn() {
+      clickWithAction(btnNext,0,2000);
+        return this;
+    }
+
+
+    public void clickAddToWishList() {
+        addToWishListTab.click();
+    }
+
+    public BooksPage chooseHackersBook() {
+        hackersBook.click();
+        return this;
     }
 }
-    //a[contains(.,' Continue shopping')]
+//a[contains(.,' Continue shopping')]

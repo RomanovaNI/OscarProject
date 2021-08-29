@@ -35,6 +35,11 @@ public class HomePage extends PageBase {
         return logOutTab.isDisplayed();
     }
 
+    public HomePage clickLogout(){
+        logOutTab.click();
+        return this;
+    }
+
     @FindBy(css = ".icon-user")
     WebElement accountTab;
 

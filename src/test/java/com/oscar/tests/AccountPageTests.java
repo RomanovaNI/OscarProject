@@ -60,4 +60,42 @@ public class AccountPageTests extends TestBase {
         Assert.assertTrue(new AccountPage(driver).isProfileUpdatedPresent());
     }
 
+    @Test
+    public void addNewAddressPositiveTest() {
+        new HomePage(driver).clickAccount().clickAddressBook().clickAddNewAddress()
+                .fillAddressForm("Ms", "Lola", "Ivanova", "Humboldt str", "Berlin", "13086", "Germany", "3rd floor");
+        Assert.assertTrue(new AccountPage(driver).isSuccessAlertPresent());
+    }
+
+    @Test
+    public void addNewAddressNegativeTest() {
+        new HomePage(driver).clickAccount().clickAddressBook().clickAddNewAddress()
+                .fillAddressForm("Ms", "Lola", "Ivanova", "Humboldt str", "Berlin", "130", "Russian Federation", "3rd floor");
+        Assert.assertTrue(new AccountPage(driver).isErrorMsgPresent());
+    }
+
+    @Test
+    public void alertProductInAccountTest() {
+        new HomePage(driver).chooseBooksMenu().chooseEssenProgrammingSection().chooseUnavailbleBook()
+                .clickNotifyMe();
+        new HomePage(driver).clickAccount().clickProductAlert();
+
+        Assert.assertTrue(new AccountPage(driver).isBookContainsText("Agile Retrospective"));
+
+
+    }
+
+    @Test
+    public void addToWishListTest() {
+        String pswd = "Lo123456%";
+        new HomePage(driver).clickLogout().clickLoginOrRegister()
+                .fillRegisterForm("lo" + System.currentTimeMillis() + "@lo.lo", pswd)
+                .chooseBooksMenu().clickNextBtn().chooseHackersBook().clickAddToWishList();
+
+        new HomePage(driver).clickAccount().clickWishLists().clickDeafaultList();
+        Assert.assertTrue(new AccountPage(driver).isBookContainsText("Hackers"));
+        new HomePage(driver).clickAccount().deleteAccount(pswd);
+    }
+
+
 }
