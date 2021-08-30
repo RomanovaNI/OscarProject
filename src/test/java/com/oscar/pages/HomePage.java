@@ -56,4 +56,8 @@ public class HomePage extends PageBase {
         booksSubMenuTab.click();
         return new BooksPage(driver);
     }
+
+    public boolean isLoginOrRegisterPresent() {
+        return loginTab.isDisplayed();
+    }
 }
