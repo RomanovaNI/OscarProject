@@ -40,4 +40,11 @@ public class HomePageTests extends TestBase {
         Assert.assertTrue(homePageForHomePage.isBrowseStoreMenuPresent());
 
     }
+
+    @Test
+    public void isElementsClickableTests() {
+        Assert.assertTrue(homePageForHomePage.isIconElementClickable());
+        Assert.assertTrue(homePageForHomePage.isBrowseStoreElementClickable());
+        Assert.assertTrue(homePageForHomePage.isBasketTotalElementClickable());
+    }
 }

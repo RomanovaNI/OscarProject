@@ -70,4 +70,15 @@ public class HomePageForHomePage extends PageBase {
         return browseStoreMenu.isDisplayed();
     }
 
+    public boolean isIconElementClickable() {
+        return isElementClickable(homeIcon,3);
+    }
+
+    public boolean isBrowseStoreElementClickable() {
+        return isElementClickable(browseStoreMenu,3);
+    }
+
+    public boolean isBasketTotalElementClickable() {
+        return isElementClickable(basketTotal,3);
+    }
 }

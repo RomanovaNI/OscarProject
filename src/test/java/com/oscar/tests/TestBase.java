@@ -3,6 +3,7 @@ package com.oscar.tests;
 import com.oscar.pages.PageBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
@@ -29,8 +30,13 @@ public class TestBase {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
+        /* dlya raboty browser v fonovom regime
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        options.addArguments("window-size=1200x600");
+        driver = new ChromeDriver(options);*/
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver.manage().window().maximize(); //dlya raboty browser v fonovom regime nado ety stroky comment
         driver.get("http://selenium1py.pythonanywhere.com/en-gb/");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
