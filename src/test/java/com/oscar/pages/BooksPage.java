@@ -35,6 +35,9 @@ public class BooksPage extends PageBase {
     @FindBy(xpath = "//a[contains(.,'next')]")
     WebElement btnNext;
 
+    @FindBy(xpath = "//a[contains(.,'previous')]")
+    WebElement btnPrevious;
+
     @FindBy(xpath = "//button[contains(.,'Add to wish list')]")
     WebElement addToWishListTab;
 
@@ -68,7 +71,12 @@ public class BooksPage extends PageBase {
     }
 
     public BooksPage clickNextBtn() {
-      clickWithAction(btnNext,0,2000);
+        clickWithAction(btnNext, 0, 2000);
+        return this;
+    }
+
+    public BooksPage clickPreviousBtn() {
+        btnPrevious.click();
         return this;
     }
 
@@ -80,6 +88,24 @@ public class BooksPage extends PageBase {
     public BooksPage chooseHackersBook() {
         hackersBook.click();
         return this;
+    }
+
+    @FindBy(xpath = "//div//h1")
+    WebElement bookNameCell;
+
+    public boolean isBookContainsText(String bookName) {
+        return bookNameCell.getText().contains(bookName);
+    }
+
+    @FindBy(xpath = "//li[@class='current'][contains(.,'Page 3')]")
+    WebElement page3;
+
+    public boolean is3rdPagePresent() {
+        return page3.isDisplayed();
+    }
+
+    public boolean isPreviousBtnPresent() {
+        return btnPrevious.isDisplayed();
     }
 }
 //a[contains(.,' Continue shopping')]

@@ -69,4 +69,11 @@ public class HomePage extends PageBase {
         return new ProductPage(driver);
 
     }
+
+    @FindBy(xpath = "//div[@class='sub-header'][contains(.,'Welcome')]")
+    WebElement welcomeGreetingsHeader;
+
+    public boolean isWelcomeGreetingsPresent() {
+        return welcomeGreetingsHeader.isDisplayed();
+    }
 }

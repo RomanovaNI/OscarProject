@@ -26,7 +26,7 @@ public class ProductPage extends PageBase {
     @FindBy(xpath = "//li[2]//ul[1]//li[1]//a[@href='/en-gb/catalogue/category/books/fiction_3/'][contains(.,'Fiction')]")
     WebElement fictionCatalogue;
 
-    @FindBy(xpath = "//strong[contains(.,'Non-Fiction')]")
+    @FindBy(xpath = "(//a[contains(text(),'Non-Fiction')])[2]")
     WebElement nonFictionCatalogue;
 
     public ProductPage goToFictionCatalogue() {
@@ -50,6 +50,15 @@ public class ProductPage extends PageBase {
     }
 
     public boolean isNonFictionCategoryDisplayed() {
-        return nonFictionCatalogue.isDisplayed();
+        return nonFictionTitle.isDisplayed();
+    }
+
+    @FindBy(xpath = "//a[contains(.,'Oscar')]")
+    WebElement oscarIcon;
+
+
+    public HomePage clickOscarIcon() {
+        oscarIcon.click();
+        return new HomePage(driver);
     }
 }
