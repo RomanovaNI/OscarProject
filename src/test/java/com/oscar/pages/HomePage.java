@@ -35,7 +35,7 @@ public class HomePage extends PageBase {
         return logOutTab.isDisplayed();
     }
 
-    public HomePage clickLogout(){
+    public HomePage clickLogout() {
         logOutTab.click();
         return this;
     }
@@ -59,5 +59,14 @@ public class HomePage extends PageBase {
 
     public boolean isLoginOrRegisterPresent() {
         return loginTab.isDisplayed();
+    }
+
+    @FindBy(xpath = "//a[@href='/en-gb/catalogue/']")
+    WebElement allProductCatalogue;
+
+    public ProductPage openProductCatalogue() {
+        allProductCatalogue.click();
+        return new ProductPage(driver);
+
     }
 }

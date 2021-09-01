@@ -1,7 +1,9 @@
 package com.oscar.tests;
 
+import com.oscar.pages.BasketPage;
 import com.oscar.pages.HomePage;
 import com.oscar.pages.ProductPage;
+import com.oscar.pages.RegisterPage;
 import com.oscar.pages.homePage.HomePageForHomePage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -12,12 +14,17 @@ public class HomePageTests extends TestBase {
     HomePage homePage;
     ProductPage productPage;
     HomePageForHomePage homePageForHomePage;
+    RegisterPage registerPage;
+    BasketPage basketPage;
 
     @BeforeMethod
     public void pageInit() {
         homePage = PageFactory.initElements(driver, HomePage.class);
         productPage = PageFactory.initElements(driver, ProductPage.class);
         homePageForHomePage = PageFactory.initElements(driver, HomePageForHomePage.class);
+        registerPage = PageFactory.initElements(driver, RegisterPage.class);
+        basketPage = PageFactory.initElements(driver, BasketPage.class);
+
 
     }
 
@@ -46,5 +53,29 @@ public class HomePageTests extends TestBase {
         Assert.assertTrue(homePageForHomePage.isIconElementClickable());
         Assert.assertTrue(homePageForHomePage.isBrowseStoreElementClickable());
         Assert.assertTrue(homePageForHomePage.isBasketTotalElementClickable());
+    }
+
+    @Test
+    public void isElementsRedirectToRegisterPageTests() {
+        homePage.clickLoginOrRegister();
+        Assert.assertTrue(registerPage.isLoginFormPresent());
+
+
+    }
+
+    @Test
+    public void isElementsRedirectToProductPageTests() {
+        homePage.selectCategory();
+        Assert.assertTrue(productPage.isBookTitlePresent());
+
+
+    }
+
+    @Test
+    public void isElementsRedirectToBasketPageTests() {
+        homePageForHomePage.goToBasket();
+        Assert.assertTrue(basketPage.isBasketTitlePresent());
+
+
     }
 }

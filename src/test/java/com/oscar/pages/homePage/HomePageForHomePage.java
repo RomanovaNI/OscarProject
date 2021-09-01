@@ -1,5 +1,6 @@
 package com.oscar.pages.homePage;
 
+import com.oscar.pages.BasketPage;
 import com.oscar.pages.PageBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -80,5 +81,10 @@ public class HomePageForHomePage extends PageBase {
 
     public boolean isBasketTotalElementClickable() {
         return isElementClickable(basketTotal,3);
+    }
+
+    public BasketPage goToBasket() {
+        viewBasketTab.click();
+        return new BasketPage(driver);
     }
 }
