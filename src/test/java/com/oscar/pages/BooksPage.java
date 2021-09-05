@@ -12,6 +12,9 @@ public class BooksPage extends PageBase {
     @FindBy(xpath = "//form[@action='/en-gb/basket/add/209/']")
     WebElement addFirstBookToBasketTab;
 
+    @FindBy(xpath = "(//button[contains(.,'Add to basket')])[1]")
+    WebElement addItemToBasketTab;
+
     @FindBy(xpath = "//div[@class='alertinner '][contains(.,' has been added to your basket.')]")
     WebElement confirmMsgItemIsInBasket;
 
@@ -41,8 +44,13 @@ public class BooksPage extends PageBase {
     @FindBy(xpath = "//button[contains(.,'Add to wish list')]")
     WebElement addToWishListTab;
 
-    public BooksPage addItemToBasket() {
+    public BooksPage addFirstItemToBasket() {
         addFirstBookToBasketTab.click();
+        return this;
+    }
+
+    public BooksPage addItemToBasket() {
+       addItemToBasketTab.click();
         return this;
     }
 
@@ -106,6 +114,16 @@ public class BooksPage extends PageBase {
 
     public boolean isPreviousBtnPresent() {
         return btnPrevious.isDisplayed();
+    }
+    @FindBy(css = "[title='Agile Retrospective']")
+    WebElement titleAgile;
+
+    public String getNameOfUnavailableBook() {
+        return titleAgile.getText();
+    }
+
+    public String getBookName() {
+        return bookNameCell.getText();
     }
 }
 //a[contains(.,' Continue shopping')]

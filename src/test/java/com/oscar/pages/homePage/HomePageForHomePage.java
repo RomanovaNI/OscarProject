@@ -1,6 +1,7 @@
 package com.oscar.pages.homePage;
 
 import com.oscar.pages.BasketPage;
+import com.oscar.pages.HomePage;
 import com.oscar.pages.PageBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -86,5 +87,11 @@ public class HomePageForHomePage extends PageBase {
     public BasketPage goToBasket() {
         viewBasketTab.click();
         return new BasketPage(driver);
+    }
+
+    public HomePageForHomePage clickOscarIcon() {
+        homeIcon.click();
+        return this;
+
     }
 }

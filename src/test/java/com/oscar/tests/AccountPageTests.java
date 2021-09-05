@@ -17,7 +17,7 @@ public class AccountPageTests extends TestBase {
 
     @Test
     public void orderHistoryPositiveTest() {
-        new HomePage(driver).chooseBooksMenu().addItemToBasket();
+        new HomePage(driver).chooseBooksMenu().addFirstItemToBasket();
         Assert.assertTrue(new BooksPage(driver).isConfirmMsgPresent());
         new BooksPage(driver).clickCheckout().fillShippingForm("Lola", "Ivanova", "Humboldt str", "Berlin", "13085", "Germany")
                 .clickContinueFromPayment().clickPlaceOrder().clickContinueFromConfirmation()
@@ -28,7 +28,7 @@ public class AccountPageTests extends TestBase {
 
     @Test
     public void orderHistoryNegativeTest() {
-        new HomePage(driver).chooseBooksMenu().addItemToBasket();
+        new HomePage(driver).chooseBooksMenu().addFirstItemToBasket();
         Assert.assertTrue(new BooksPage(driver).isConfirmMsgPresent());
         new BooksPage(driver).clickCheckout().fillShippingForm("Lola", "Ivanova", "Humboldt str", "Berlin", "1085", "Germany");
 

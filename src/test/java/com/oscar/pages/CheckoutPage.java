@@ -88,4 +88,19 @@ public class CheckoutPage extends PageBase {
     public boolean isErrorMsgIndexPresent() {
         return errorPostcode.isDisplayed();
     }
+
+    @FindBy(xpath = "//label[@for='id_options_1']")
+    WebElement radio3NewCustomerAndCreateAccount;
+
+    public CheckoutPage chooseNewCustomerAndCreateAccount() {
+        radio3NewCustomerAndCreateAccount.click();
+        return this;
+    }
+
+    @FindBy(xpath = "//h1[contains(.,'Who are you?')]")
+    WebElement whoAreYouAlert;
+
+    public boolean isWhoRUPresent() {
+       return whoAreYouAlert.isDisplayed();
+    }
 }

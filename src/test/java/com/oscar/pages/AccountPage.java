@@ -238,6 +238,7 @@ public class AccountPage extends PageBase {
     }
 
     @FindBy(xpath = "//a[contains(.,'Default')]")
+
     //css = "tr:nth-child(2) > td"
     WebElement deafaultWishList;
 

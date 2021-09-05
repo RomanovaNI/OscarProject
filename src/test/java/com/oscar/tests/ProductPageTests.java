@@ -1,10 +1,8 @@
 package com.oscar.tests;
 
-import com.oscar.pages.AccountPage;
 import com.oscar.pages.BooksPage;
 import com.oscar.pages.HomePage;
 import com.oscar.pages.ProductPage;
-import com.oscar.pages.homePage.HomePageForHomePage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -18,44 +16,47 @@ public class ProductPageTests extends TestBase {
     }
 
     @Test
-    public void checkRedirectToFictionCategoryTest(){
+    public void checkRedirectToFictionCategoryTest() {
         new ProductPage(driver).goToFictionCatalogue();
         Assert.assertTrue(new ProductPage(driver).isFictionCategoryDisplayed());
     }
 
     @Test
-    public void checkRedirectToNonFictionCategoryTest(){
+    public void checkRedirectToNonFictionCategoryTest() {
         new ProductPage(driver).goToNonFictionCatalogue();
         Assert.assertTrue(new ProductPage(driver).isNonFictionCategoryDisplayed());
     }
 
     @Test
-    public void verifyCorrectNameBookOnRedirectPageTest(){
-        new BooksPage(driver).chooseEssenProgrammingSection().chooseUnavailbleBook();
-        Assert.assertTrue(new BooksPage(driver).isBookContainsText("Agile Retrospective"));
-
+    public void verifyCorrectNameBookOnRedirectPageTest() {
+        new BooksPage(driver).chooseEssenProgrammingSection();
+        String bookName = new BooksPage(driver).getNameOfUnavailableBook();
+        new BooksPage(driver).chooseUnavailbleBook();
+        // Assert.assertTrue(new BooksPage(driver).isBookContainsText("Agile Retrospective"));
+        Assert.assertEquals(new BooksPage(driver).getBookName(), bookName);
     }
+
     @Test
-    public void addItemToBasketFromAllProductsPageTest(){
-        new BooksPage(driver).addItemToBasket();
+    public void addItemToBasketFromAllProductsPageTest() {
+        new BooksPage(driver).addFirstItemToBasket();
         Assert.assertTrue(new BooksPage(driver).isConfirmMsgPresent());
     }
 
     @Test
-    public void checkPaginationNextTest(){
+    public void checkPaginationNextTest() {
         new BooksPage(driver).clickNextBtn().clickNextBtn();
         Assert.assertTrue(new BooksPage(driver).isPreviousBtnPresent());
     }
 
     @Test
-    public void checkPaginationPreviousTest(){
+    public void checkPaginationPreviousTest() {
         new BooksPage(driver).clickNextBtn().clickNextBtn().clickNextBtn().clickPreviousBtn();
         Assert.assertTrue(new BooksPage(driver).is3rdPagePresent());
     }
 
     @Test
-    public void redirectToHomePageWithOscarIcon(){
-      new ProductPage(driver).clickOscarIcon();
-      Assert.assertTrue(new HomePage(driver).isWelcomeGreetingsPresent());
+    public void redirectToHomePageWithOscarIcon() {
+        new ProductPage(driver).clickOscarIcon();
+        Assert.assertTrue(new HomePage(driver).isWelcomeGreetingsPresent());
     }
 }

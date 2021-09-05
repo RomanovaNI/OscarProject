@@ -1,0 +1,5 @@
+09:52:27.175 [main] INFO  com.oscar.tests.TestBase - Start test: registrationPositiveTest
+09:52:56.686 [main] ERROR com.oscar.tests.TestBase - Test result: Failed
+/Users/natalia/ProjectTelRan/QA/OscarProject/screenshot/screen1629787976672.png
+09:52:56.687 [main] INFO  com.oscar.tests.TestBase - Stop test: null
+09:52:56.687 [main] INFO  com.oscar.tests.TestBase - ***************

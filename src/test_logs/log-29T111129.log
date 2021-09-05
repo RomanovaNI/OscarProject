@@ -1,0 +1,4 @@
+11:11:37.430 [main] INFO  com.oscar.tests.TestBase - Start test: addNewAddressPositiveTest
+11:11:44.212 [main] INFO  com.oscar.tests.TestBase - Test result: PASSED
+11:11:44.212 [main] INFO  com.oscar.tests.TestBase - Stop test: null
+11:11:44.213 [main] INFO  com.oscar.tests.TestBase - ***************

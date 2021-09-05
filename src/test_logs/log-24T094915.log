@@ -1,0 +1,4 @@
+09:50:07.873 [main] INFO  com.oscar.tests.TestBase - Start test: registrationNegativePasswordTest
+09:50:32.830 [main] INFO  com.oscar.tests.TestBase - Test result: PASSED
+09:50:32.830 [main] INFO  com.oscar.tests.TestBase - Stop test: null
+09:50:32.831 [main] INFO  com.oscar.tests.TestBase - ***************
