@@ -1,5 +1,0 @@
-09:50:27.925 [main] INFO  com.oscar.tests.TestBase - Start test: LoginPositiveTest
-09:50:45.371 [main] ERROR com.oscar.tests.TestBase - Test result: Failed
-ru.yandex.qatools.ashot.Screenshot@715fb77
-09:50:45.377 [main] INFO  com.oscar.tests.TestBase - Stop test: null
-09:50:45.377 [main] INFO  com.oscar.tests.TestBase - ***************

@@ -16,10 +16,19 @@ public class BasketPageTests extends TestBase {
     }
 
     @Test
-    public void checkTotalPriceAfterUpdateTest() {
+    public void checkTotalPriceAfterUpdateTest1() {
         String priceForOneItem = new BasketPage(driver).savePriceOfOneItem();
         new BasketPage(driver).changeQuantity("2");
         Assert.assertNotEquals(new BasketPage(driver).checkTotalPrice(), priceForOneItem);
+    }
+
+    @Test
+    public void checkTotalPriceAfterUpdateTest2() {
+        double price = new BasketPage(driver).getPrice();
+        System.out.println(price);
+        new BasketPage(driver).changeQuantity("2");
+        Assert.assertEquals(new BasketPage(driver).getPrice(), price*2);
+
     }
 
     @Test
@@ -33,9 +42,9 @@ public class BasketPageTests extends TestBase {
         new HomePageForHomePage(driver).clickOscarIcon();
         new HomePage(driver).chooseBooksMenu().addFirstItemToBasket();
         new HomePageForHomePage(driver).goToBasket();
-        String bookName = new BasketPage(driver).saveBookname();
+        String bookNameFromTotalBasket = new BasketPage(driver).saveBookname();
         new BasketPage(driver).changeQuantity("0");
-        Assert.assertNotEquals(new BasketPage(driver).checkNameOfBookAfterDelete(), bookName);
+        Assert.assertNotEquals(new BasketPage(driver).checkNameOfBookAfterDelete(), bookNameFromTotalBasket);
     }
 
     @Test

@@ -1,4 +1,0 @@
-15:37:19.515 [main] INFO  com.oscar.tests.TestBase - Start test: changePswdPositiveTest
-15:37:26.769 [main] INFO  com.oscar.tests.TestBase - Test result: PASSED
-15:37:26.770 [main] INFO  com.oscar.tests.TestBase - Stop test: null
-15:37:26.770 [main] INFO  com.oscar.tests.TestBase - ***************

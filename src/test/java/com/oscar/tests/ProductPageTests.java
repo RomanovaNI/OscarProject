@@ -30,10 +30,11 @@ public class ProductPageTests extends TestBase {
     @Test
     public void verifyCorrectNameBookOnRedirectPageTest() {
         new BooksPage(driver).chooseEssenProgrammingSection();
-        String bookName = new BooksPage(driver).getNameOfUnavailableBook();
-        new BooksPage(driver).chooseUnavailbleBook();
+        String bookNameFromList = new BooksPage(driver).getNameOfBookFromList(12);
+        new BooksPage(driver).chooseBookFromTheList(12);
+        String bookName=new BooksPage(driver).getNameOfBook();
         // Assert.assertTrue(new BooksPage(driver).isBookContainsText("Agile Retrospective"));
-        Assert.assertEquals(new BooksPage(driver).getBookName(), bookName);
+        Assert.assertEquals(bookName, bookNameFromList);
     }
 
     @Test

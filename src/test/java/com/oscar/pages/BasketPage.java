@@ -49,10 +49,12 @@ public class BasketPage extends PageBase {
     public boolean isEmptyBasketAlertPresenrt() {
         return alertBasketIsEmpty.isDisplayed();
     }
-     @FindBy(xpath = "//form/div[1]/div[1]/div[2]/h3[1]/a[1]")
-     WebElement nameOfFirstItem;
+
+    @FindBy(xpath = "//form/div[1]/div[1]/div[2]/h3[1]/a[1]")
+    WebElement nameOfFirstItem;
 
     public String saveBookname() {
+        //.basket-items:nth-child(6) h3 a
         return nameOfFirstItem.getText();
     }
 
@@ -60,7 +62,7 @@ public class BasketPage extends PageBase {
         return nameOfFirstItem.getText();
     }
 
-    @FindBy (css = "tr:nth-child(2) th:nth-child(2)")
+    @FindBy(css = "tr:nth-child(2) th:nth-child(2)")
     WebElement totalPriceInTotals;
 
     public String checkTotalPriceInTotals() {
@@ -71,11 +73,17 @@ public class BasketPage extends PageBase {
         return totalPriceInTotals.getText();
     }
 
-    @FindBy (xpath = "//a[contains(.,'Proceed to checkout')]")
+    @FindBy(xpath = "//a[contains(.,'Proceed to checkout')]")
     WebElement proccedToCheckoutTab;
 
     public CheckoutPage proceedToCheckout() {
         proccedToCheckoutTab.click();
         return new CheckoutPage(driver);
+    }
+
+    public Double getPrice() {
+        double num = Double.parseDouble(priceTotal.getText().replace("£", ""));
+        return num;
+
     }
 }
