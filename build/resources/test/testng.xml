@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression" parallel="classes" thread-count="3">
+    <test name="Regression">
+        <classes>
+<!--           <class name="com.oscar.tests.LoginPageTests"/>-->
+            <class name="com.oscar.tests.RegisterPageTests"/>
+            <!--          <class name="com.oscar.tests.BasketPageTests"/>-->
+
+                  </classes>
+              </test>
+
+
+          </suite>

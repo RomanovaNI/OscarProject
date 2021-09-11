@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.oscar.tests.RegisterPageTests" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-09-11T17:03:11" hostname="Saschas-MacBook-Pro.local" time="77.259">
+  <properties/>
+  <testcase name="registrationNegativeEmailDataProviderTest[0](@lo.lo)" classname="com.oscar.tests.RegisterPageTests" time="1.117"/>
+  <testcase name="registrationNegativeEmailDataProviderTest[1](lolo.lo)" classname="com.oscar.tests.RegisterPageTests" time="1.108"/>
+  <testcase name="registrationNegativeEmailDataProviderTest[2](lo@lolo)" classname="com.oscar.tests.RegisterPageTests" time="1.488"/>
+  <testcase name="registrationNegativeEmailDataProviderTest[3](lo@)" classname="com.oscar.tests.RegisterPageTests" time="0.999"/>
+  <testcase name="registrationNegativePasswordTest" classname="com.oscar.tests.RegisterPageTests" time="3.6"/>
+  <testcase name="registrationNegativeEmailTest" classname="com.oscar.tests.RegisterPageTests" time="1.072"/>
+  <testcase name="registrationPositiveTest" classname="com.oscar.tests.RegisterPageTests" time="9.878"/>
+  <testcase name="registrationNegativePasswordDataProviderTest[0](123)" classname="com.oscar.tests.RegisterPageTests" time="4.553"/>
+  <testcase name="registrationNegativePasswordDataProviderTest[1](Lo123)" classname="com.oscar.tests.RegisterPageTests" time="3.6"/>
+  <testcase name="registrationNegativePasswordDataProviderTest[2](lololololololo)" classname="com.oscar.tests.RegisterPageTests" time="3.624"/>
+  <testcase name="registrationNegativePasswordDataProviderTest[3](..11..Lo)" classname="com.oscar.tests.RegisterPageTests" time="3.67"/>
+  <system-out><![CDATA[20:03:11.297 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationNegativeEmailDataProviderTest
+20:03:11.307 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ---> With data: [@lo.lo]
+20:03:12.460 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:03:12.461 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:03:12.461 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+20:03:16.828 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationNegativeEmailDataProviderTest
+20:03:16.830 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ---> With data: [lolo.lo]
+20:03:17.945 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:03:17.946 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:03:17.946 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+20:03:22.785 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationNegativeEmailDataProviderTest
+20:03:22.785 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ---> With data: [lo@lolo]
+20:03:24.278 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:03:24.278 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:03:24.278 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+20:03:28.337 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationNegativeEmailDataProviderTest
+20:03:28.338 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ---> With data: [lo@]
+20:03:29.340 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:03:29.341 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:03:29.341 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+20:03:33.786 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationNegativePasswordTest
+20:03:37.395 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:03:37.395 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:03:37.395 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+20:03:41.408 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationNegativeEmailTest
+20:03:42.482 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:03:42.483 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:03:42.483 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+20:03:46.581 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationPositiveTest
+20:03:56.463 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:03:56.463 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:03:56.463 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+20:04:00.805 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationNegativePasswordDataProviderTest
+20:04:00.806 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ---> With data: [123]
+20:04:05.362 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:04:05.362 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:04:05.363 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+20:04:09.235 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationNegativePasswordDataProviderTest
+20:04:09.236 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ---> With data: [Lo123]
+20:04:12.840 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:04:12.840 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:04:12.840 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+20:04:16.874 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationNegativePasswordDataProviderTest
+20:04:16.875 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ---> With data: [lololololololo]
+20:04:20.501 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:04:20.501 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:04:20.502 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+20:04:24.927 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Start test: registrationNegativePasswordDataProviderTest
+20:04:24.928 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ---> With data: [..11..Lo]
+20:04:28.599 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Test result: PASSED
+20:04:28.600 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - Stop test: null
+20:04:28.600 [TestNG-test=Regression-1] INFO  com.oscar.tests.TestBase - ***************
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 30340
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379788.605][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:03:08 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 32217
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379794.663][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:03:14 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 18654
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379800.088][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:03:20 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 28717
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379806.316][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:03:26 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 22108
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379811.622][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:03:31 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 27990
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379819.333][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:03:39 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 3255
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379824.486][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:03:44 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 21655
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379838.730][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:03:58 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 30054
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379847.355][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:04:07 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 23603
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379855.005][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:04:15 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 31559
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1631379862.586][WARNING]: This version of ChromeDriver has not been tested with Chrome version 93.
+Sep 11, 2021 8:04:22 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
