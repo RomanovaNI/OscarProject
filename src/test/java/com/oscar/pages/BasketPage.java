@@ -1,8 +1,11 @@
 package com.oscar.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class BasketPage extends PageBase {
     public BasketPage(WebDriver driver) {
@@ -25,7 +28,6 @@ public class BasketPage extends PageBase {
     public BasketPage changeQuantity(String quantity) {
         type(numberOfBooks, quantity);
         updateTab.click();
-
         return this;
     }
 
@@ -65,8 +67,9 @@ public class BasketPage extends PageBase {
     @FindBy(css = "tr:nth-child(2) th:nth-child(2)")
     WebElement totalPriceInTotals;
 
-    public String checkTotalPriceInTotals() {
-        return totalPriceInTotals.getText();
+    public double getTotalPriceInTotals() {
+        double num = Double.parseDouble(totalPriceInTotals.getText().replace("£", ""));
+        return num;
     }
 
     public String checkTotalPriceAfterDelete() {
@@ -81,9 +84,34 @@ public class BasketPage extends PageBase {
         return new CheckoutPage(driver);
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         double num = Double.parseDouble(priceTotal.getText().replace("£", ""));
         return num;
 
+    }
+
+
+    @FindBy(css = ".basket-items")
+    List<WebElement> itemList;
+
+    public int getItemCountList() {
+        int countOfItem = itemList.size();
+        System.out.println(countOfItem);
+        return countOfItem;
+    }
+
+    public boolean getItemTitleList(String title) {
+        int countOfItem = itemList.size();
+
+        for (int i = 0; i < countOfItem; i++) {
+            WebElement itemResultList = itemList.get(i);
+            List<WebElement> titleList = itemResultList.findElements(By.cssSelector(".col-sm-4 h3"));
+
+        for (WebElement list : titleList) {
+            System.out.println(list.getText());
+            list.toString().contains(title);
+        }
+        }
+        return false;
     }
 }

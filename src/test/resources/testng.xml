@@ -3,12 +3,12 @@
 <suite name="Regression" parallel="classes" thread-count="3">
     <test name="Regression">
         <classes>
-            <class name="com.oscar.tests.LoginPageTests"/>
+<!--           <class name="com.oscar.tests.LoginPageTests"/>-->
             <class name="com.oscar.tests.RegisterPageTests"/>
-            <class name="com.oscar.tests.BasketPageTests"/>
+            <!--          <class name="com.oscar.tests.BasketPageTests"/>-->
 
-        </classes>
-    </test>
+                  </classes>
+              </test>
 
 
-</suite>
+          </suite>
