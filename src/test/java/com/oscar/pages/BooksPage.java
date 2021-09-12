@@ -1,5 +1,6 @@
 package com.oscar.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -68,8 +69,8 @@ public class BooksPage extends PageBase {
         return this;
     }
 
-    public BooksPage chooseUnavailbleBook() {
-        unavailableBook.click();
+    public BooksPage chooseBookFromTheList(int number) {
+        driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") h3 > a")).click();
         return this;
     }
 
@@ -118,11 +119,12 @@ public class BooksPage extends PageBase {
     @FindBy(css = "[title='Agile Retrospective']")
     WebElement titleAgile;
 
-    public String getNameOfUnavailableBook() {
-        return titleAgile.getText();
+    public String getNameOfBookFromList(int number) {
+        return driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") h3 > a"))
+                .getText();
     }
 
-    public String getBookName() {
+    public String getNameOfBook() {
         return bookNameCell.getText();
     }
 }

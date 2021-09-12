@@ -76,7 +76,7 @@ public class AccountPageTests extends TestBase {
 
     @Test
     public void alertProductInAccountTest() {
-        new HomePage(driver).chooseBooksMenu().chooseEssenProgrammingSection().chooseUnavailbleBook()
+        new HomePage(driver).chooseBooksMenu().chooseEssenProgrammingSection().chooseBookFromTheList(12)
                 .clickNotifyMe();
         new HomePage(driver).clickAccount().clickProductAlert();
 
