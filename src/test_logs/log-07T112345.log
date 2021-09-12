@@ -1,4 +1,0 @@
-11:23:51.309 [main] INFO  com.oscar.tests.TestBase - Start test: checkTotalPriceAfterUpdateTest2
-11:23:57.224 [main] INFO  com.oscar.tests.TestBase - Test result: PASSED
-11:23:57.225 [main] INFO  com.oscar.tests.TestBase - Stop test: null
-11:23:57.225 [main] INFO  com.oscar.tests.TestBase - ***************
